@@ -1,0 +1,10 @@
+version: 2
+jobs:
+  test:
+    environment:
+      RAILS_ENV: test
+    docker:
+      - image: circleci/ruby:2.4
+    steps:
+      - checkout
+      - run: bundle exec rspec --profile --out $CIRCLE_TEST_REPORTS/rspec/rspec.xml --format documentation
