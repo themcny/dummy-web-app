@@ -4,7 +4,7 @@ machine:
 
 test:
   override:
-    - bundle exec rspec --format RspecJunitFormatter --profile --out $CIRCLE_TEST_REPORTS/rspec/rspec.xml --format documentation:
+    - bundle exec rspec --profile --out $CIRCLE_TEST_REPORTS/rspec/rspec.xml --format documentation:
       parallel: true
       files:
         - spec/**/*_spec.rb
