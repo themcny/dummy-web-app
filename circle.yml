@@ -1,0 +1,10 @@
+machine:
+  environment:
+    RAILS_ENV: test
+
+test:
+  override:
+    - bundle exec rspec --profile --out $CIRCLE_TEST_REPORTS/rspec/rspec.xml --format documentation:
+      parallel: true
+      files:
+        - spec/**/*_spec.rb
